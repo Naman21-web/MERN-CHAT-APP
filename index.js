@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const userRoutes = require("./routes/userRoutes");
-const messagesRoute = require("./routes/messagesRoute");
+const userRoutes = require("./routes/userRoutes.js");
+const messagesRoute = require("./routes/messagesRoute.js");
 const socket = require("socket.io");
 const path = require('path');
 
@@ -25,7 +25,7 @@ app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, './../public/build/index.html'));
   });
 
-mongoose.connect(process.env.MONGO_URL,{//Server setup
+mongoose.connect("mongodb+srv://jainn098421:jainn098421@cluster0.gw7jcy5.mongodb.net/?retryWrites=true&w=majority",{//Server setup
     //useUrlParser: true,
     useUnifiedTopology: true,
 }).then(()=>{//If successful
@@ -34,8 +34,8 @@ mongoose.connect(process.env.MONGO_URL,{//Server setup
     console.log(err.message);
 });
 
-const server = app.listen(process.env.PORT,() =>{//start port
-    console.log(`Server Started on Port ${process.env.PORT}`);
+const server = app.listen(5000,() =>{//start port
+    console.log(`Server Started on Port 5000`);
 });
 // app.options("*", cors({ origin: 'http://localhost:3000', optionsSuccessStatus: 200 }));
 const io = socket(server,{

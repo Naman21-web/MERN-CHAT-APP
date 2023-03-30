@@ -1,4 +1,4 @@
-const messageModel = require("../model/messageModel");
+const messageModel = require("../model/messageModel.js");
 
 //This route add new message in database
 module.exports.addMessage = async (req,res,next) => {

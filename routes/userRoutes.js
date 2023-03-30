@@ -1,4 +1,4 @@
-const { register, login, setAvatar, getAllUsers, firebaseLogin, checkUsername } = require("../controllers/userController");
+const { register, login, setAvatar, getAllUsers, firebaseLogin, checkUsername } = require("../controllers/userController.js");
 
 const router = require("express").Router();
 
