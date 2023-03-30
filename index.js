@@ -43,6 +43,7 @@ const io = socket(server,{
         origin:"*",
         // origin:"http://localhost:3000",
         credentials:true,
+        methods: ["GET", "POST", "PUT", "DELETE"],
         // optionsSuccessStatus: 200,
     },
 })
@@ -70,3 +71,9 @@ io.on("connection",(socket)=> {//we had connection
         //if the user is not online msg is stored in database and if he is online it will be recieved by him as well as stored in database
     })
 })
+
+app.get("/", (req, res) =>
+  res.send(
+    `<h1>Site is Working. click <a href=${process.env.FRONTEND_URL}>here</a> to visit frontend.</h1>`
+  )
+);
