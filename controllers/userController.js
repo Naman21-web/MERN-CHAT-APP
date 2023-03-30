@@ -1,6 +1,6 @@
 const User = require("../model/userModel.js");
 const bcrypt = require("bcrypt");
-const { isSet } = require("util/types");
+// const { isSet } = require("util/types");
 
 module.exports.register = async (req,res,next) => {
     try{
